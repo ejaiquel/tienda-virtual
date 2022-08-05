@@ -18,7 +18,7 @@ angular
     'ngTouch',  
     'angular-growl'     
   ])
-  .constant('appConfig', {url:"http://localhost:8080"})
+  .constant('appConfig', {url:window.location.origin})
   .config(function ($routeProvider) {    
     $routeProvider
       .when('/tienda', {
@@ -27,6 +27,6 @@ angular
         controllerAs: 'tienda'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/tienda'
       });
   });
