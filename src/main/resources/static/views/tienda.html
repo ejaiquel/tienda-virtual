@@ -1,0 +1,82 @@
+<div role="main">
+    <hr>
+    <!--Formulario Selección-->
+    <div class="container">
+        <form class="form-inline">
+            <label for="categoria">&nbsp;Categorias&nbsp;</label>
+            <select class="form-control" id="categoria" ng-model="categoria.id" ng-change="getSubCategoriasByCategoriaId(categoria.id)" required>
+                <option ng-repeat="categoria in categorias" ng-value="categoria.id">{{categoria.descripcion}}</option>            
+            </select>
+    
+            <label for="sub-categoria">&nbsp;SubCategorias&nbsp;</label>
+            <select class="form-control" id="subcategoria" ng-model="subCategoria.id" ng-change="getMarcas()" required>
+                <option ng-repeat="subCategoria in subCategorias" ng-value="subCategoria.id">{{subCategoria.descripcion}}</option>            
+            </select>
+    
+            <label for="marca">&nbsp;Marca&nbsp;</label>
+            <select class="form-control" id="marca" ng-model="marca.id" ng-change="queryProductos(marca.id)" required>
+                <option ng-repeat="marca in marcas" ng-value="marca.id">{{marca.marca}}</option>            
+            </select>        
+        </form>
+    </div>
+    <hr>
+    <!--Inicio Contenedor Viso de Productos Disponibles-->
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div ng-repeat="producto in productos"  class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img width="100%" height="auto" src="{{producto.imagen}}" class="ui-search-result-image__element" alt="Sin imagen">
+                        <div class="card-body">
+                            <p class="card-text">{{producto.descripcion}} - {{producto.codigo}} </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                <button type="button" ng-click="addProductoCarro(producto)" class="btn btn-sm btn-outline-secondary">Agregar al carro</button>                        
+                                </div>
+                                <small class="text-muted">{{producto.valor | currency : "$"}}</small>
+                                <br>
+                                <small class="text-muted">En Stock: {{producto.enStock }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <!--Fin Contenedor Viso de Productos Disponibles-->
+
+    <!--Inicio Tabla Carrito de compras-->
+    <div class="container" ng-if="listaProductoCarro.length > 0">
+        <span>Productos agregados al carrito</span>
+        <table class="table table-striped">          
+            <thead>
+              <tr>            
+                <th scope="col">Código</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col"></th>            
+                <th scope="col">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="producto in listaProductoCarro">
+                <th scope="row">{{producto.codigo}}</th>
+                <td>{{producto.descripcion}}</td>
+                <td>{{producto.cantidad}}</td>
+                <td>
+                    <input type="button" ng-click="addProductoCarro(producto)" value="+">
+                    <input type="button" ng-click="removeProductoCarro(producto)" value="-">
+                </td>
+                <td>{{producto.valor | currency : "$"}}</td>            
+              </tr>          
+            </tbody>
+            <tfoot>
+                <tr style="text-align: right">                
+                    <td style="padding-right:60px ;" colspan="6"><strong>Total Compra:&nbsp;&nbsp; {{ totalCompra | currency : "$" }}</strong></td>              
+                </tr>
+              </tfoot>
+        </table>
+    </div>
+    <!--Fin Tabla Carrito de compras-->
+
+</div>    
