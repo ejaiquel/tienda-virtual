@@ -11,11 +11,11 @@ Aplicación demo desarrollada como prueba técnica para la Agencia Nacional de C
 * [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#data.sql.jpa-and-spring-data)
 * [AngularJs 1.8x](https://angularjs.org/)
 
-### Guias
-Aplicacion Full Stack desarrollada tecnologia Backend REST en JAVA Spring-Boot, Hibernate, JPA (+PostgreSQL )
-FrontEnd en HTML5, JS Framework Angular.js
+### Descripción
 
-    Acceso a la aplicación: https://www.youtube.com/watch?v=7vHzVN0EiQc
+Aplicacion Full Stack desarrollada tecnologia Backend REST en JAVA Spring-Boot, Hibernate, JPA (+PostgreSQL )
+FrontEnd en HTML5, JS Framework Angularjs, CSS Boostrap 4.5x.
+Incluye Autenticación JWT.
 
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
@@ -23,11 +23,9 @@ FrontEnd en HTML5, JS Framework Angular.js
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 
 
-# Aplicación demo desarrollada como prueba técnica para la Agencia Nacional de Contratación Pública COLOMBIA COMPRA EFICIENTE
+### Aplicación demo desarrollada como prueba técnica para la Agencia Nacional de Contratación Pública COLOMBIA COMPRA EFICIENTE
 
-
-Acceso al Curso completo: https://app-tienda-prueba.herokuapp.com/
-
+Acceso demo de la aplicación web: https://app-tienda-prueba.herokuapp.com/
 Contiene Script de objetos de base de datos el archivo ScriptBD Tienda.sql
 
 
